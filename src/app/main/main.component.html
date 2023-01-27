@@ -1,6 +1,20 @@
-<ng-container *ngFor="let data of dataList;let i=index">
+<!-- <ng-container *ngFor="let data of dataList;let i=index">
     <div *ngIf="i<6" >
       {{data.title}}
       <img src="{{ data.image }}" />
     </div>
-</ng-container>
+</ng-container> -->
+<!-- <loader></loader> -->
+<div slickContainer #slickController="slick" [slickConfig]="products">
+    <ng-container *ngIf="slickController.initialize">
+      <ng-container *ngFor="let data of dataList;let i=index">
+        <div *ngIf="i<6" slickItem class="col-1 vertical-align ">
+          <div>
+            <div class="row margin-0">
+              <div class="col-6"><img src="{{ data.image }}" class="col-9" /></div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+</div>

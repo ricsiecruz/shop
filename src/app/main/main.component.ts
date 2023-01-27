@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Slick } from 'ngx-slickjs';
 
 @Component({
   selector: 'app-main',
@@ -17,6 +18,15 @@ export class MainComponent implements OnInit {
       this.dataList = res;
       console.log("test", this.dataList);
     })
+  }
+  
+  products: Slick.Config = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 2000 
   }
 
 }

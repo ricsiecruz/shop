@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'shop';dataList: any;
+  title = 'shop';
+  
+  // subscription!: Subscription;
+  // constructor( private loaderService : LoaderService){
 
+  // }
+  // isLoading = true;
+ 
+  // ngOnInit(){
+   
+  //  this.subscription = this.loaderService.getCounterValue().subscribe(value => { 
+      
+  //    console.log(value , 'subscrid')
+  //    this.isLoading = value ? true : false;
+  //    })
+  // }
+  // ngOnDestroy(){
+  //   this.subscription.unsubscribe();
+  // }
 }
