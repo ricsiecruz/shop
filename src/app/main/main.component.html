@@ -9,12 +9,56 @@
     <ng-container *ngIf="slickController.initialize">
       <ng-container *ngFor="let data of dataList;let i=index">
         <div *ngIf="i<6" slickItem class="col-1 vertical-align ">
-          <div>
-            <div class="row margin-0">
-              <div class="col-6"><img src="{{ data.image }}" class="col-9" /></div>
-            </div>
-          </div>
+              <img src="{{ data.image }}" class="col-9" style="max-height: 600px;" />
         </div>
       </ng-container>
     </ng-container>
+</div>
+<div class="row margin-0 padding-80-0">
+    <div class="col-1"></div>
+    <div class="col-10 row margin-0">
+        <div *ngFor="let data of services" class="col text-center padding-0-60">
+            
+                <img src="{{ data.img }}" />
+            <div class="font-w500">{{ data.title }}</div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing.
+        </div>
+    </div>
+</div>
+<div class="text-666 text-center">
+    <div class="separator"></div>
+    <div class="text-center font-s40 text-black font-w700 lato">Trending Now<span class="text-blue">.</span></div>
+    We have thousands of new accessories for men and women in zoom store.
+    <div class="row margin-0">
+        <div *ngFor="let data of dataList.slice(5,10)" class="col">
+            <img src="{{ data.image }}" class="col-12 padding-50" style="height: 270px; border: 1px solid #eeeeee;" />
+            <div class="padding-10-0 text-black">{{ data.title }}</div>
+            <div class="text-23 font-w500">${{ data.price }}</div>
+        </div>
+    </div>
+</div>
+<div class="row margin-0">
+    <div class="col-1"></div>
+    <div class="col-10 row margin-0 vertical-align">
+        <div class="col-4">
+            <div style="letter-spacing: 5px; border: 1px solid #777;" class="padding-10-30 col-6 text-center">NEW ARRIVALS</div>
+            <div class="padding-20-0 padding-0-b">
+                <div class="separator-left"></div>
+                <div class="font-s40 text-black font-w700 lato col-10">Best Collection Of 2022!</div>
+            </div>
+            <div class="text-666">Lorem ipsum dolor sit amet, consecte hiu tur adipiscing elit, sed do eiusmod tempor</div>
+            <div class="bg-blue text-white padding-10-20 col-4 text-center margin-15-0">
+                SHOP NOW
+            </div>
+        </div>
+        <img src="assets/featurebanner.webp" class="col-5" />
+        <div class="col-3">
+            <div *ngFor="let data of collections" class="row margin-0 vertical-align padding-5-0">
+                <div class="col">{{ data.title }}</div>
+                <div class="col">
+                    <img class="col-12 circle" src="{{ data.img }}" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -4,12 +4,28 @@ body {
     font-family: 'Poppins';
 }
 
+.lato {
+    font-family: 'Lato';
+}
+
 .bg-black {
     background-color: #232323;
 }
 
+.bg-gray {
+    background-color: #eeeeee;
+}
+
+.bg-blue {
+    background-color: #1a466e;
+}
+
 .text-white {
     color: #ffffff;
+}
+
+.text-black {
+    color: #2c2c2c;
 }
 
 .text-gray {
@@ -20,6 +36,14 @@ body {
     color: #7b7b7b;
 }
 
+.text-blue {
+    color: #1a466e;
+}
+
+.text-23 {
+    color: #232323;
+}
+
 .text-666 {
     color: #666666;
 }
@@ -28,16 +52,64 @@ body {
     text-align: center;
 }
 
+.font-s40 {
+    font-size: 40px;
+}
+
+.font-w500 {
+    font-weight: 500;
+}
+
+.font-w700 {
+    font-weight: 700;
+}
+
 .margin-0 {
     margin: 0 !important;
+}
+
+.margin-15-0 {
+    margin: 15px 0;
+}
+
+.padding-50 {
+    padding: 50px;
+}
+
+.padding-0-60 {
+    padding: 0 60px !important;
+}
+
+.padding-5-0 {
+    padding: 5px 0;
 }
 
 .padding-10-0 {
     padding: 10px 0;
 }
 
+.padding-10-20 {
+    padding: 10px 20px;
+}
+
+.padding-20-0 {
+    padding: 20px 0;
+}
+
+.padding-10-30 {
+    padding: 10px 30px;
+}
+
 .padding-30-0 {
     padding: 30px 0;
+}
+
+.padding-80-0 {
+    padding: 80px 0;
+}
+
+.padding-0-b {
+    padding-bottom: 0;
 }
 
 .input-group-text {
@@ -99,3 +171,36 @@ body {
   }
 
 /* loader end */
+
+.slick-track {
+    display: flex !important;
+    align-items: center;
+}
+
+.separator {
+    position: absolute;
+    background: no-repeat;
+    height: 37px;
+    width: 100%;
+    text-align: center;
+    background-position: center;
+    left: 0;
+    right: 0;
+    background-image: url('assets/seperator.png');
+}
+
+.separator-left {
+    position: absolute;
+    background: no-repeat;
+    height: 37px;
+    text-align: center;
+    background-position: left;
+    left: 150px;
+    right: 0;
+    background-image: url('assets/seperator.png');
+}
+
+.circle {
+    border-radius: 50%;
+    box-shadow: 0px 6px 6.58px 0.42px rgb(0 0 0 / 6%);
+}

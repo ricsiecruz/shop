@@ -29,4 +29,34 @@ export class MainComponent implements OnInit {
     autoplaySpeed: 2000 
   }
 
+  services = [
+    {
+      "img" : "assets/1_1.png",
+      "title" : "Free Shipping"
+    },
+    {
+      "img" : "assets/2_1.png",
+      "title" : "Payment Process"
+    },
+    {
+      "img" : "assets/3_1.png",
+      "title" : "Return Policy"
+    }
+  ]
+
+  collections = [
+    {
+      "img" : "assets/top.avif",
+      "title" : "Women Top Collection"
+    },
+    {
+      "img" : "assets/jeans.webp",
+      "title" : "Men & Women Jeans"
+    },
+    {
+      "img" : "assets/shirt.webp",
+      "title" : "Men's Shirt Collection"
+    }
+  ]
+
 }
