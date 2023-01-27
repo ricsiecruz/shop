@@ -1,0 +1,6 @@
+<ng-container *ngFor="let data of dataList;let i=index">
+    <div *ngIf="i<6" >
+      {{data.title}}
+      <img src="{{ data.image }}" />
+    </div>
+</ng-container>
