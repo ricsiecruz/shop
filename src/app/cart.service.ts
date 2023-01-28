@@ -18,7 +18,7 @@ export class CartService {
 
   constructor(private localStore: LocalService) { 
 
-    // this.loadCart();
+    this.loadCart();
   }
   get amount():number{
     return this.cartItems.reduce((c,t1) => t1.qty+c,0);
