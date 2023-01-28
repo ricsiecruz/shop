@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
-import { CartService } from '../cart.service';
-import { Product } from '../products';
+import { CartService } from 'src/app/cart.service';
+import { Product } from 'src/app/products';
 
 @Component({
   selector: 'app-main',
