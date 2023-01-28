@@ -11,8 +11,14 @@ export class CartService {
   newTotal = new Subject();
   cartItems:CartProduct[] =[];
 
+  // public cartData: any  = []; 
+  public allItems: any  = {};   
+  public cartItemsList: any  = {};  
+  public cartTotal: any  = 0;  
+
   constructor(private localStore: LocalService) { 
 
+    // this.loadCart();
   }
   get amount():number{
     return this.cartItems.reduce((c,t1) => t1.qty+c,0);
@@ -78,10 +84,34 @@ export class CartService {
       this.saveCart();
     }
   }
-
+  
   emptyCart(){   
-  //  this.cartData = [];  
-  //  this.listCartItems(); 
+   this.items = [];  
+   this.listCartItems(); 
+ }
+
+ listCartItems(){
+   let tempCart: { pid: any; name: any; qty: any; price: number; }[] = [];
+   let getActualItems = Object.keys(this.items);
+   let cartDataItems = this.items;
+   let tempTotal = 0;
+
+   var onlyChoosenItems = (this.allItems).filter(function(item: any) {
+     if(getActualItems.indexOf(item.p_id) !== -1 ){
+       tempCart.push({
+         pid:  item.p_id,
+         name:  item.product_name,
+         qty:  cartDataItems[item.p_id],
+         price:  item.product_price*cartDataItems[item.p_id],
+       });  
+       tempTotal += item.product_price*cartDataItems[item.p_id];
+     }
+   });
+
+   
+   this.cartItemsList = tempCart;
+   this.cartTotal = tempTotal;
+   
  }
 
 }

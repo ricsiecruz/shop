@@ -93,7 +93,8 @@ export class CartComponent implements OnInit {
     this.amount= this.cartService.amount;
   }
 
-  test(items: any) {
+  test() {
+  // test(items: any) {
     // this.cartService.clearCart(items);
     // this.cartItems = [...this.cartService.getItems()];
     // this.amount= this.cartService.amount;
