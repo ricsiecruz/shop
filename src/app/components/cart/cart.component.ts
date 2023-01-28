@@ -23,6 +23,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.loadCart();
     this.cartItems = this.cartService.getItems();
+    console.log("uuuu", this.cartService.loadCart())
+    console.log("Sss", this.cartItems = this.cartService.getItems())
   }
   
   buyNow(item:any){
