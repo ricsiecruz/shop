@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { CartService } from 'src/app/cart.service';
+import { BsOffcanvasPosition } from 'src/app/offcanvas/types/offcanvas-position';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,9 @@ import { CartService } from 'src/app/cart.service';
 })
 export class HeaderComponent implements OnInit {
   
+  position$ = new BehaviorSubject<BsOffcanvasPosition>('start');
   amount: number = 0;
+  offcanvasState = false;
 
   constructor(private cartService:CartService) { }
 
@@ -21,6 +25,11 @@ export class HeaderComponent implements OnInit {
     );
     this.cartService.loadCart();
     this.amount = this.cartService.getItems().length;
+  }
+
+  showOffcanvas(position: BsOffcanvasPosition) {
+    this.position$.next(position);
+    setTimeout(() => (this.offcanvasState = true), 50);
   }
 
 }

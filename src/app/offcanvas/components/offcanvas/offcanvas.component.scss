@@ -1,0 +1,33 @@
+.offcanvas {
+    &.oc-max-width {
+      max-width: calc(100% - 40px);
+    }
+    &.oc-max-height {
+      max-height: calc(100% - 40px);
+    }
+  }
+  
+  .modal-backdrop {
+    z-index: 1040;
+  }
+  
+  .offcanvas {
+    visibility: unset;
+
+    overflow-y: auto !important;
+  
+    &.disable-transition {
+      transition: none;
+    }
+  
+    &.offcanvas-top {
+      height: auto;
+      bottom: unset;
+    }
+  
+    &.offcanvas-bottom {
+      height: auto;
+      top: unset;
+    }
+  }
+  

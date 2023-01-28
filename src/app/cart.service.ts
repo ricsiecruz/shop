@@ -9,10 +9,15 @@ export class CartService {
   
   items: any[] = [];
   newTotal = new Subject();
+  cartItems:CartProduct[] =[];
 
   constructor(private localStore: LocalService) { 
 
   }
+  get amount():number{
+    return this.cartItems.reduce((c,t1) => t1.qty+c,0);
+    
+  };
 
   add(addedItem:any) {
     this.items.push(addedItem);
@@ -59,5 +64,24 @@ export class CartService {
       this.items = JSON.parse(myCart)  ?? [];
     }
   }
+
+  clearCart(items:any) {
+    this.items = [];
+    localStorage.removeItem("cart_items")
+  }
+
+  removeItem(item:any) {
+    const index = this.items.findIndex(o => o.id === item.id);
+
+    if (index > -1) {
+      this.items.splice(index, 1);
+      this.saveCart();
+    }
+  }
+
+  emptyCart(){   
+  //  this.cartData = [];  
+  //  this.listCartItems(); 
+ }
 
 }

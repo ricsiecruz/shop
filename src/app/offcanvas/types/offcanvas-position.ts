@@ -1,0 +1,1 @@
+export type BsOffcanvasPosition = 'top' | 'bottom' | 'start' | 'end';

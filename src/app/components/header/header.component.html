@@ -1,3 +1,16 @@
+<ng-container *ngIf="position$ | async as position">
+    <bs-offcanvas [(state)]="offcanvasState" [position]="position" [hasBackdrop]="true" (backdropClick)="offcanvasState = false">
+      <div *bsOffcanvasContent>
+        <bs-offcanvas-header>
+          <h5 class="offcanvas-title">Your Cart</h5>
+          <button type="button" bsOffcanvasClose class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </bs-offcanvas-header>
+        <bs-offcanvas-body>
+          <app-cart></app-cart>
+        </bs-offcanvas-body>
+      </div>
+    </bs-offcanvas>
+  </ng-container>
 <div class="bg-black text-white row margin-0 padding-10-0 text-center">
     <div class="col">
         Email Us: info@gmail.com
@@ -23,7 +36,7 @@
             />
             <span class="input-group-text" id="basic-addon2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;"><i class="fa fa-search icon text-gray-d"></i></span>
           </div>
-        <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true"></i>
+        <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true" (click)="showOffcanvas('end')"></i>
         <span *ngIf="amount > 0" class="col bg-blue text-white count" style="font-weight: 600; font-size: 16px; text-align: left; padding: 0;">{{ amount }}</span>
         <i class="fa fa-user-o col text-center text-666"></i>
     </div>

@@ -1,0 +1,39 @@
+<p>cart works!</p>
+<div class="row margin-0 vertical-align" style="padding: 10px 0; border-bottom: 1px solid #eeeeee;" *ngFor="let cartItem of cartItems;  let i = index ">
+    <div class="text-center text-black-l font-s18">{{cartItem.title}}</div>
+    <div class="row margin-0">
+      <img src="{{ cartItem.thumbnail }}" class="col-4" />
+      <div class="col font-s13">
+        <div>{{cartItem.brand}}</div>
+        <div>Php {{cartItem.price}}</div>
+        <div class="col-6">
+          <input [(ngModel)]="cartItem.qtyTotal" [ngModelOptions]="{standalone: true}" min="1" type="number" value="{{ cartItem.qtyTotal }}" name="" class="form-control" (change)="changeSubtotal(cartItem ,i)" />
+        </div>
+        <div>Php {{cartItem.price * cartItem.qtyTotal}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-0 vertical-align font-s18 text-center padding-10-t">
+    <div>Total</div>
+    <div #subTotalWrap class="font-s20">PHP {{ total }}</div>
+    
+  </div>
+  <div class="col-12">
+    <hr />
+    <div class="col">
+      <button class="btn btn-primary" (click)="clearCart(cartItems)">Clear Items</button>
+      <!-- <button class="btn btn-primary" (click)="removeProduct(item)">Delete</button>
+      <button class="btn btn-primary" (click)="test()">test</button> -->
+    </div>
+  </div>
+  <div class="padding-20-t">
+    <!-- <div *ngIf="!(authService.isLoggedIn$ | async)">
+      <div class="col text-center font-s14 padding-20-0" style="letter-spacing: 0.285em; background: #6c6c6c !important; color: #fff;">CHECKOUT</div>
+    </div>
+    <div *ngIf="(authService.isLoggedIn$ | async)">
+      <div (click)="checkout()" (click)="buyNow(item)" class="col text-center font-s14 padding-20-0 cursor black-btn" style="letter-spacing: 0.285em;">CHECKOUT</div>
+    </div> -->
+    <div>
+      <div (click)="checkout()" (click)="buyNow(item)" class="col text-center font-s14 padding-20-0 cursor black-btn" style="letter-spacing: 0.285em;">CHECKOUT</div>
+    </div>
+  </div>

@@ -11,18 +11,26 @@ import { CartService } from './cart.service';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CartComponent } from './components/cart/cart.component';
+import { BsOffcanvasModule } from './offcanvas/offcanvas.module';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    LoaderComponent
+    LoaderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BsOffcanvasModule,
+    OverlayModule,
     NgxSlickJsModule.forRoot({
       links: {
         jquery: "https://code.jquery.com/jquery-3.4.0.min.js",
