@@ -14,8 +14,9 @@ export class MainComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get('https://fakestoreapi.com/products').subscribe((res: any) => {
-      this.dataList = res;
+    // https://fakestoreapi.com/products
+    this.httpClient.get('https://dummyjson.com/products').subscribe((res: any) => {
+      this.dataList = res.products;
       console.log("test", this.dataList);
     })
   }

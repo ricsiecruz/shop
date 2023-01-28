@@ -5,11 +5,16 @@
     </div>
 </ng-container> -->
 <!-- <loader></loader> -->
+
+<!-- <div *ngFor="let data of dataList">
+    {{ data.title }}
+</div> -->
+
 <div slickContainer #slickController="slick" [slickConfig]="products">
     <ng-container *ngIf="slickController.initialize">
       <ng-container *ngFor="let data of dataList;let i=index">
         <div *ngIf="i<6" slickItem class="col-1 vertical-align ">
-              <img src="{{ data.image }}" class="col-9" style="max-height: 600px;" />
+              <img src="{{ data.thumbnail }}" class="col-9" style="max-height: 600px;" />
         </div>
       </ng-container>
     </ng-container>
@@ -31,7 +36,7 @@
     We have thousands of new accessories for men and women in zoom store.
     <div class="row margin-0">
         <div *ngFor="let data of dataList.slice(5,10)" class="col">
-            <img src="{{ data.image }}" class="col-12 padding-50" style="height: 270px; border: 1px solid #eeeeee;" />
+            <img src="{{ data.thumbnail }}" class="col-12 padding-50" style="height: 270px; border: 1px solid #eeeeee;" />
             <div class="padding-10-0 text-black">{{ data.title }}</div>
             <div class="text-23 font-w500">${{ data.price }}</div>
             <div class="bg-blue text-white col-5 padding-10 offset-md-4 margin-10-t">Add to cart</div>
