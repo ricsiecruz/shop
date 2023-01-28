@@ -10,6 +10,7 @@ import { NgxSlickJsModule } from 'ngx-slickjs';
 import { LoaderService } from './loader.service';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoaderInterceptor } from './loader.interceptor';
     })
   ],
   providers: [
-    LoaderService,    
+    LoaderService,
+    CartService,  
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

@@ -39,7 +39,7 @@
             <img src="{{ data.thumbnail }}" class="col-12 padding-50" style="height: 270px; border: 1px solid #eeeeee;" />
             <div class="padding-10-0 text-black">{{ data.title }}</div>
             <div class="text-23 font-w500">${{ data.price }}</div>
-            <div class="bg-blue text-white col-5 padding-10 offset-md-4 margin-10-t">Add to cart</div>
+            <div class="bg-blue text-white col-5 padding-10 offset-md-4 margin-10-t" (click)="addToCart(data)">Add to cart</div>
         </div>
     </div>
 </div>

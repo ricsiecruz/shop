@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
+import { CartService } from '../cart.service';
+import { Product } from '../products';
 
 @Component({
   selector: 'app-main',
@@ -10,8 +12,12 @@ import { Slick } from 'ngx-slickjs';
 export class MainComponent implements OnInit {
 
   dataList: any;
+  items: any[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
     // https://fakestoreapi.com/products
@@ -19,6 +25,31 @@ export class MainComponent implements OnInit {
       this.dataList = res.products;
       console.log("test", this.dataList);
     })
+  }
+
+  addToCart(product: Product) {
+    this.cartService.add(product);
+  }
+
+  onAdd(item: any) {
+    const itemData = {
+      id:item.id,
+      thumbnail:item.thumbnail,
+      title:item.title,
+      price:item.price,
+      brand:item.brand,
+      qtyTotal:1
+    }
+    if (!this.cartService.itemInCart(itemData)) {
+      this.cartService.add(itemData); //add items in cart
+      this.items = [...this.cartService.getItems()];
+    }
+    else{
+      if (!this.cartService.itemInCartSize(itemData)) {
+        this.cartService.add(itemData); //add items in cart
+        this.items = [...this.cartService.getItems()];
+      }   
+    }
   }
   
   products: Slick.Config = {
