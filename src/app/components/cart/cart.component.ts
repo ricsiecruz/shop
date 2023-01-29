@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
   item: any;
   items: any[] = [];
   amount:number = 0;
+  totalAmount:number = 0;
 
   constructor(
     public cartService: CartService,
@@ -25,6 +26,24 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getItems();
     console.log("uuuu", this.cartService.loadCart())
     console.log("Sss", this.cartItems = this.cartService.getItems())
+
+    // this.cartService.getProducts().subscribe(data => {
+    //   this.cartItems = data;
+
+    //   this.totalAmount = this.cartService.getTotalPrice();
+    // });
+
+    // this.cartItems.loadCart().subscribe((data: any) => {
+    //   this.cartItems = data;
+    //   this.totalAmount = this.cartService.getTotalPrice();
+    //   console.log("total", this.totalAmount)
+    // })
+
+    // this.totalAmount += this.item.price;
+    // console.log("total", this.totalAmount)
+
+    this.totalAmount = this.cartService.getTotalPrice();
+      console.log("total", this.totalAmount)
   }
   
   buyNow(item:any){
@@ -74,11 +93,10 @@ export class CartComponent implements OnInit {
 
   get total() {
     return this.cartItems.reduce(
-      (sum: { price: number; }, x: { qtyTotal: number; price: number; }) => ({
-        qtyTotal: 1,
-        price: sum.price + x.qtyTotal * x.price
+      (sum: { price: number; }, x: { price: number; }) => ({
+        price: sum.price * x.price
       }),
-      { qtyTotal: 1, price: 0 }
+      {  price: 0 }
     ).price;
   }
 
@@ -87,6 +105,7 @@ export class CartComponent implements OnInit {
     // this.items.forEach((item, index) => this.cartService.removeItem(index));
     this.cartService.clearCart(items);
     this.cartItems = [...this.cartService.getItems()];
+    window.location.reload();
   }
 
   removeProduct(items: any) :void{
@@ -116,6 +135,22 @@ export class CartComponent implements OnInit {
         return;
       }
     });
+  }
+  removeItemFromCart(productId: any) {
+    /* this.cartItems.map((item, index) => {
+      if (item.id === productId) {
+        this.cartItems.splice(index, 1);
+      }
+    });
+
+    this.mySharedService.setProducts(this.cartItems); */
+
+    this.cartService.removeProductFromCart(productId);
+
+  }
+  removeFromCart(item: any) {
+    this.cartService.removeItem(item);
+    this.items = this.cartService.getItems();
   }
 
 }

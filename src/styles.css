@@ -4,6 +4,10 @@ body {
     font-family: 'Poppins';
 }
 
+.poppins {
+    font-family: 'Poppins';
+}
+
 .lato {
     font-family: 'Lato';
 }
@@ -20,6 +24,10 @@ body {
     background-color: #1a466e;
 }
 
+.bg-red {
+    background-color: #ff0000;
+}
+
 .text-white {
     color: #ffffff;
 }
@@ -30,6 +38,10 @@ body {
 
 .text-gray {
     color: #a5a5a5;
+}
+
+.text-gray-l {
+    color: #686868;
 }
 
 .text-gray-d {
@@ -52,6 +64,26 @@ body {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-s12 {
+    font-size: 12px;
+}
+
+.font-s14 {
+    font-size: 14px;
+}
+
+.font-s15 {
+    font-size: 15px;
+}
+
 .font-s40 {
     font-size: 40px;
 }
@@ -66,6 +98,10 @@ body {
 
 .margin-0 {
     margin: 0 !important;
+}
+
+.margin-10-0 {
+    margin: 10px 0 !important;
 }
 
 .margin-15-0 {
@@ -118,6 +154,14 @@ body {
 
 .padding-80-0 {
     padding: 80px 0;
+}
+
+.padding-0-l {
+    padding-left: 0 !important;
+}
+
+.padding-0-r {
+    padding-right: 0 !important;
 }
 
 .padding-0-b {
@@ -229,3 +273,8 @@ body {
     text-align: center !important;
 }
 
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+  }

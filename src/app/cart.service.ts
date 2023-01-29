@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject }    from 'rxjs';
+import { Observable, Subject }    from 'rxjs';
 import { LocalService } from './localStorage';
 import { CartProduct, Product } from './products';
 
@@ -15,6 +15,7 @@ export class CartService {
   public allItems: any  = {};   
   public cartItemsList: any  = {};  
   public cartTotal: any  = 0;  
+  total: number = 0;
 
   constructor(private localStore: LocalService) { 
 
@@ -45,12 +46,6 @@ export class CartService {
     this.saveCart();
     console.log("Added item", addedItem)
   }
-
-  saveCart(): void {
-    // console.log(this.items,this.items.length)
-    this.newTotal.next({total: this.items.length});
-    localStorage.setItem('cart_items', JSON.stringify(this.items)); 
-  }
   
   itemInCart(item:any): boolean {
     return this.items.findIndex(o => o.productName === item.productName) > -1;
@@ -69,6 +64,12 @@ export class CartService {
     if(myCart != null || myCart != undefined){
       this.items = JSON.parse(myCart)  ?? [];
     }
+  }
+
+  saveCart(): void {
+    // console.log(this.items,this.items.length)
+    this.newTotal.next({total: this.items.length});
+    localStorage.setItem('cart_items', JSON.stringify(this.items)); 
   }
 
   clearCart(items:any) {
@@ -113,5 +114,30 @@ export class CartService {
    this.cartTotal = tempTotal;
    
  }
+ getProducts(): Observable<any> {
+   console.log('this.cartItems :', this.cartItems);
+   return this.newTotal.asObservable();
+ }
+ 
+ getTotalPrice() {
+  let total = 0;
+
+  this.items.map((item) => {
+    total += item.price;
+  });
+  console.log("total", total)
+  return total;
+}
+
+removeProductFromCart(productId: number) {
+  this.cartItems.map((item, index) => {
+    if (item.id === productId) {
+      this.cartItems.splice(index, 1);
+    }
+  });
+
+  // Update Observable value
+  this.newTotal.next(this.cartItems);
+}
 
 }
