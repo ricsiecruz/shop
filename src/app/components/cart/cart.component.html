@@ -1,30 +1,35 @@
-<div class="row margin-0 vertical-align" style="padding: 10px 0; border-bottom: 1px solid #eeeeee;" *ngFor="let cartItem of cartItems;  let i = index ">
-    <div class="row margin-0 padding-0">
-      <img src="{{ cartItem.thumbnail }}" class="col-4" style="border: 0.1rem solid #e9e9e9;" />
-      <div class="col font-s13">
-        <div class="text-23 font-s14 poppins text-left">{{cartItem.title}}</div>
-        <div class="text-gray-l font-s12">{{cartItem.brand}}</div>
-        <div class="text-gray-l font-s12">Php {{cartItem.price}}</div>
-      </div>
-      <span aria-hidden="true" (click)="removeFromCart(cartItem)">&times;</span>
-      <!-- <span aria-hidden="true" (click)="removeItemFromCart(cartItem.id)">delete</span> -->
-    </div>
+<div *ngIf="cartItems.length == 0" class="font-s24 text-23 text-center font-w500">
+    Your cart is empty
 </div>
-<hr />
-<div class="sticky">
-    <div class="text-23 font-s15 poppins font-w700 row margin-0">
-        <div class="col">Total</div>
-        <div class="col text-right">$ {{ totalAmount }}</div>
-    </div>
-    <div class="text-center text-white font-s14 font-w500">
-        <div class="row margin-0 margin-10-0">
-            <div class="col padding-0-l">
-                <div class="padding-10-30 bg-black">YOUR CART</div>
-            </div>
-            <div class="col padding-0-r">
-                <div class="padding-10-30 bg-blue" (click)="checkout()">CHECKOUT</div>
-            </div>
+<div *ngIf="cartItems.length !== 0">
+    <div class="row margin-0 vertical-align" style="padding: 10px 0; border-bottom: 1px solid #eeeeee;" *ngFor="let cartItem of cartItems;  let i = index ">
+        <div class="row margin-0 padding-0">
+        <img src="{{ cartItem.thumbnail }}" class="col-4" style="border: 0.1rem solid #e9e9e9;" />
+        <div class="col font-s13">
+            <div class="text-23 font-s14 poppins text-left">{{cartItem.title}}</div>
+            <div class="text-gray-l font-s12">{{cartItem.brand}}</div>
+            <div class="text-gray-l font-s12">Php {{cartItem.price}}</div>
         </div>
-        <div class="padding-10-30 bg-red" (click)="clearCart(cartItems)">EMPTY CART</div>
+        <i class="fa fa-trash-o text-23 col-1 padding-0 text-right" aria-hidden="true" (click)="removeFromCart(cartItem)"></i>
+        <!-- <span aria-hidden="true" (click)="removeItemFromCart(cartItem.id)">delete</span> -->
+        </div>
+    </div>
+    <hr />
+    <div class="sticky">
+        <div class="text-23 font-s15 poppins font-w700 row margin-0">
+            <div class="col">Total</div>
+            <div class="col text-right">$ {{ totalAmount }}</div>
+        </div>
+        <div class="text-center text-white font-s14 font-w500">
+            <div class="row margin-0 margin-10-0">
+                <div class="col padding-0-l">
+                    <div class="padding-10-30 bg-black" [routerLink]="['/cart']">YOUR CART</div>
+                </div>
+                <div class="col padding-0-r">
+                    <div class="padding-10-30 bg-blue" (click)="checkout()">CHECKOUT</div>
+                </div>
+            </div>
+            <div class="padding-10-30 bg-red" (click)="clearCart(cartItems)">EMPTY CART</div>
+        </div>
     </div>
 </div>

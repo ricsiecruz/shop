@@ -1,29 +1,54 @@
-<ng-container *ngIf="position$ | async as position">
-    <bs-offcanvas [(state)]="offcanvasState" [position]="position" [hasBackdrop]="true" (backdropClick)="offcanvasState = false">
-      <div *bsOffcanvasContent>
-        <bs-offcanvas-header>
-          <h5 class="offcanvas-title poppins font-s14 text-23">CART</h5>
-          <button type="button" bsOffcanvasClose class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </bs-offcanvas-header>
-        <bs-offcanvas-body>
-          <app-cart></app-cart>
-        </bs-offcanvas-body>
+<!-- <div class="wrapper"> -->
+  <ng-container *ngIf="position$ | async as position">
+      <bs-offcanvas [(state)]="offcanvasState" [position]="position" [hasBackdrop]="true" (backdropClick)="offcanvasState = false">
+        <div *bsOffcanvasContent>
+          <bs-offcanvas-header>
+            <h5 class="offcanvas-title poppins font-s14 text-23">CART</h5>
+            <button type="button" bsOffcanvasClose class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </bs-offcanvas-header>
+          <bs-offcanvas-body>
+            <app-cart></app-cart>
+          </bs-offcanvas-body>
+        </div>
+      </bs-offcanvas>
+    </ng-container>
+  <div class="bg-black text-white row margin-0 padding-10-0 text-center">
+      <div class="col">
+          Email Us: info@gmail.com
       </div>
-    </bs-offcanvas>
-  </ng-container>
-<div class="bg-black text-white row margin-0 padding-10-0 text-center">
-    <div class="col">
-        Email Us: info@gmail.com
+      <div class="col">
+          Free shipping & 20-day return or refund guarantee.
+      </div>
+      <div class="col">
+          Contact Us: 911234567890
+      </div>
+  </div>
+  <div class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
+    <div class="col-1"></div>
+    <div class="col-10 row margin-0">
+      <div class="col-9">
+        <img src="assets/logo.svg" [routerLink]="['/']" />
+      </div>
+      <div class="col-3 row margin-0 vertical-align">
+          <div class="input-group col-8">
+              <input
+                type="text"
+                class="form-control border-r-none text-gray"
+                placeholder="Search"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                style="border-top-left-radius: 30px; border-bottom-left-radius: 30px;"
+              />
+              <span class="input-group-text" id="basic-addon2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;"><i class="fa fa-search icon text-gray-d"></i></span>
+          </div>
+          <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true" (click)="showOffcanvas('end')"></i>
+          <span *ngIf="amount > 0" class="col bg-blue text-white count" style="font-weight: 600; font-size: 16px; text-align: left; padding: 0;">{{ amount }}</span>
+          <i class="fa fa-user-o col text-center text-666" [routerLink]="['/login']"></i>
+      </div>
     </div>
-    <div class="col">
-        Free shipping & 20-day return or refund guarantee.
+    <!-- <div class="col-9">
+      <img src="assets/logo.svg" class="offset-md-2" />
     </div>
-    <div class="col">
-        Contact Us: 911234567890
-    </div>
-</div>
-<div class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
-    <div class="col-9"></div>
     <div class="col-3 row margin-0 vertical-align">
         <div class="input-group col-8">
             <input
@@ -36,9 +61,9 @@
             />
             <span class="input-group-text" id="basic-addon2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;"><i class="fa fa-search icon text-gray-d"></i></span>
         </div>
-        <!-- <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true"></i> -->
         <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true" (click)="showOffcanvas('end')"></i>
         <span *ngIf="amount > 0" class="col bg-blue text-white count" style="font-weight: 600; font-size: 16px; text-align: left; padding: 0;">{{ amount }}</span>
         <i class="fa fa-user-o col text-center text-666"></i>
-    </div>
-</div>
+    </div> -->
+  </div>
+<!-- </div> -->

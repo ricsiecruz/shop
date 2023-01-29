@@ -15,6 +15,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { BsOffcanvasModule } from './offcanvas/offcanvas.module';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FormsModule } from '@angular/forms';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MainComponent,
     LoaderComponent,
-    CartComponent
+    CartComponent,
+    CartDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
