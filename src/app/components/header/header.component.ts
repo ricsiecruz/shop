@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { BsOffcanvasPosition } from 'src/app/offcanvas/types/offcanvas-position';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -14,7 +15,10 @@ export class HeaderComponent implements OnInit {
   amount: number = 0;
   offcanvasState = false;
 
-  constructor(private cartService:CartService) { }
+  constructor(
+    private cartService:CartService,
+    public authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit(): void {
 

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   
   constructor(
-    private authenticationService: AuthenticationService,
+    public authenticationService: AuthenticationService,
     private formBuilder: FormBuilder
   ) { }
 

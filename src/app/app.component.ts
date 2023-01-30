@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +10,5 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   title = 'shop';
   
-  // subscription!: Subscription;
-  // constructor( private loaderService : LoaderService){
-
-  // }
-  // isLoading = true;
- 
-  // ngOnInit(){
-   
-  //  this.subscription = this.loaderService.getCounterValue().subscribe(value => { 
-      
-  //    console.log(value , 'subscrid')
-  //    this.isLoading = value ? true : false;
-  //    })
-  // }
-  // ngOnDestroy(){
-  //   this.subscription.unsubscribe();
-  // }
+constructor() {}
 }
