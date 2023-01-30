@@ -22,7 +22,7 @@
         Contact Us: 911234567890
     </div>
 </div>
-<div *ngIf='!(authenticationService.isLoggedIn$ | async)' class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
+<div *ngIf='!user' class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
   <div class="col-1"></div>
   <div class="col-10 row margin-0">
     <div class="col-9">
@@ -46,7 +46,7 @@
     </div>
   </div>
 </div>
-<div *ngIf='authenticationService.isLoggedIn$ | async' class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
+<div *ngIf='user' class="row margin-0 padding-30-0 sticky-top bg-white" style="box-shadow: 0 0 7px #0000001c;">
   <div class="col-1"></div>
   <div class="col-10 row margin-0">
     <div class="col-8">
