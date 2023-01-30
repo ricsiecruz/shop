@@ -17,6 +17,7 @@ import { CartDetailsComponent } from './components/cart-details/cart-details.com
 import { LoginComponent } from './components/login/login.component';
 import { CartService } from './services/cart.service';
 import { LoaderService } from './services/loader.service';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoaderService } from './services/loader.service';
     LoaderComponent,
     CartComponent,
     CartDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
