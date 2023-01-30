@@ -5,9 +5,9 @@
                 <div class="font-s24 text-23 padding-30-0">Login</div>
                 <div class="text-left alert-info">
                     <div>
-                        username: mor_2314
+                        username: kminchelle
                     </div>
-                    password: 83r5^_
+                    password: 0lelplR
                 </div>
 
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -20,9 +20,7 @@
                         <div *ngIf="f['password'].errors?.['required']">Password is required</div>
                     </div>
 
-                    <div class="col">
-                        <div class="padding-10-30 bg-blue text-white margin-50-0">SIGN IN</div>
-                    </div>
+                    <button class="padding-10-30 bg-blue text-white margin-50-0 col-12">SIGN IN</button>
                 </form>
             </div>
         </div>

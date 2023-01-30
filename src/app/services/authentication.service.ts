@@ -10,7 +10,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
   
   login(username: string, password: string) {
-    return this.http.post<any>('https://fakestoreapi.com/auth/login', { username, password })
+    return this.http.post<any>('https://dummyjson.com/auth/login', { username, password })
          .pipe(map(rtn => {
             //  if (rtn && rtn.access_token) {
             if (rtn) {
@@ -21,7 +21,7 @@ export class AuthenticationService {
                 //  this.isLoggedIn$.next(true);
                 //  this.setCookie(rtn.access_token);
                 console.log("user", username, password)
-                 return rtn;
+                return rtn;
              }
              else {
                 //  this.isLoginFailed = true;
