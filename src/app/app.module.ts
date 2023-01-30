@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CartService } from './services/cart.service';
 import { LoaderService } from './services/loader.service';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { AccountService } from './services/account.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
   ],
   providers: [
     LoaderService,
-    CartService,  
+    CartService,
+    AccountService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

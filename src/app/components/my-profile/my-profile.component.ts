@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  details: any;
+
+  constructor(public accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.accountService.getAccountDetails()
+    .subscribe(
+      data => {
+        this.details = data.users;
+        console.log("details", this.details)
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }
