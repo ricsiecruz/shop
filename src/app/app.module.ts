@@ -5,18 +5,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxSlickJsModule } from 'ngx-slickjs';
-import { LoaderService } from './loader.service';
 import { LoaderInterceptor } from './loader.interceptor';
-import { CartService } from './cart.service';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CartComponent } from './components/cart/cart.component';
 import { BsOffcanvasModule } from './offcanvas/offcanvas.module';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { CartService } from './services/cart.service';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     BsOffcanvasModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject }    from 'rxjs';
+import { CartProduct } from '../products';
 import { LocalService } from './localStorage';
-import { CartProduct, Product } from './products';
 
 
 @Injectable()

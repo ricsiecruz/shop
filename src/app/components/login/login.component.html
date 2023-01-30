@@ -3,9 +3,27 @@
         <div class="offset-md-5 col-5 bg-white text-center">
             <div class="offset-md-2 col-8">
                 <div class="font-s24 text-23 padding-30-0">Login</div>
-                <input class="form-control text-gray border-0-r input" placeholder="Email" />
-                <input class="form-control text-gray border-0-r input margin-15-0" placeholder="Password" />
-                <div class="padding-10-30 bg-blue text-white margin-50-0">SIGN IN</div>
+                <div class="text-left alert-info">
+                    <div>
+                        username: mor_2314
+                    </div>
+                    password: 83r5^_
+                </div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <input type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" class="form-control text-gray border-0-r input" placeholder="Username">
+                    <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                        <div *ngIf="f['username'].errors?.['required']">Username is required</div>
+                    </div>
+                    <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" class="form-control text-gray border-0-r input margin-15-0" placeholder="Password">
+                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                        <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+                    </div>
+
+                    <div class="col">
+                        <div class="padding-10-30 bg-blue text-white margin-50-0">SIGN IN</div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

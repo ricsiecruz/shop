@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CartService } from 'src/app/cart.service';
 import { BsOffcanvasPosition } from 'src/app/offcanvas/types/offcanvas-position';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',

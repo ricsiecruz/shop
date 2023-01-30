@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'app-root',

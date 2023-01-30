@@ -6,7 +6,7 @@ import {
   HttpResponse
 } from "@angular/common/http";
 import { tap } from "rxjs/operators";
-import { LoaderService } from "./loader.service";
+import { LoaderService } from "./services/loader.service";
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {
   constructor(private _loaderService: LoaderService) {}
