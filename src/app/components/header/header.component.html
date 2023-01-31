@@ -66,7 +66,7 @@
         </div>
         <i class="fa fa-shopping-basket col text-center text-666" aria-hidden="true" (click)="showOffcanvas('end')"></i>
         <span *ngIf="amount > 0" class="col bg-blue text-white count" style="font-weight: 600; font-size: 16px; text-align: left; padding: 0; right: 237px;">{{ amount }}</span>
-        <i class="fa fa-user-o col text-center text-666" [routerLink]="['/login']"></i>
+        <i class="fa fa-user-o col text-center text-666" [routerLink]="['/my-profile']"></i>
         <div (click)='authenticationService.logout()' class="col-1">Logout</div>
     </div>
   </div>
