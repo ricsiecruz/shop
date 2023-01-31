@@ -4,7 +4,18 @@
             <div class="col-3" style="border-right: 1px solid #ececec;">
                 ACCOUNT DETAILS
             </div>
-            <div class="col">
+            <div class="col padding-50">
+                <form [formGroup]="parentForm" [disableControl]="!editMode" (ngSubmit)="onSave()" class="font-s13 text-black-l2 row margin-0">
+                    <div style="display: none;" class="padding-5-0">Full Name</div>
+                    <input style="display: none;" formControlName="firstName">
+                    <button (click)="editMode=true" *ngIf="editMode == false" class="btn btn-primary">Edit</button>
+                    <button (click)="editMode=false" *ngIf="editMode == true" class="btn btn-danger margin-20-r">Cancel</button>
+                    <button (click)="onSave()" *ngIf="editMode == true" class="btn btn-success">Save</button>
+                </form>
+                <form [formGroup]="parentForm" [disableControl]="!editMode" (ngSubmit)="onSave()" class="row margin-0 text-left">
+                    <div class="padding-5-0">First Name</div>
+                    <input [(ngModel)]="user.firstName" formControlName="firstName" class="col-6 padding-10-15 text-black">
+                </form>
                 <img src="{{ user.image }}" />
                 First name
                 {{ user.firstName }}

@@ -19,6 +19,7 @@ import { CartService } from './services/cart.service';
 import { LoaderService } from './services/loader.service';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { AccountService } from './services/account.service';
+import { DisableControlDirective } from './disable.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AccountService } from './services/account.service';
     CartComponent,
     CartDetailsComponent,
     LoginComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    DisableControlDirective
   ],
   imports: [
     BrowserModule,

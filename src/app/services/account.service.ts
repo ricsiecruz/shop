@@ -22,4 +22,15 @@ export class AccountService {
     };
     return this.http.get('https://dummyjson.com/users',httpOptions)
   }
+
+  updateUser(user:any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.cookieService.get('access_token')
+      })
+    };
+
+    return this.http.post('https://dummyjson.com/users',user,httpOptions)
+  }
 }
