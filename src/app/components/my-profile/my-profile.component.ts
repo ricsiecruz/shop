@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { User } from 'src/app/user';
@@ -15,22 +16,17 @@ export class MyProfileComponent implements OnInit {
   user: User;
   editMode=false
 
-  constructor(public accountService: AccountService,
-    public authenticationService: AuthenticationService) {
+  constructor(
+    public accountService: AccountService,
+    public authenticationService: AuthenticationService,
+    private route: ActivatedRoute
+  ) {
     this.user = this.authenticationService.userValue;
         console.log(">>>", this.user)
    }
 
   ngOnInit(): void {
-    this.accountService.getAccountDetails()
-    .subscribe(
-      data => {
-        this.details = data.users;
-        console.log("details", this.details)
-      },
-      error => {
-        console.log(error);
-      });
+    this.getAccountDetails();
   }
 
   parentForm = new FormGroup({
@@ -43,6 +39,19 @@ export class MyProfileComponent implements OnInit {
     username: new FormControl({value: 'username', disabled: true}),
     birthdate: new FormControl({value: 'birthdate', disabled: true})
   });
+
+  getAccountDetails() {
+    console.log("account")
+    this.accountService.getAccountDetails()
+    .subscribe(
+      data => {
+        this.details = data.users;
+        console.log("details", this.details)
+      },
+      error => {
+        console.log(error);
+      });
+  }
 
   onSave() {
     console.log(this.parentForm.value);

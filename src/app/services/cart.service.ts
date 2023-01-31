@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject }    from 'rxjs';
 import { CartProduct } from '../products';
+import { User, UserInfo } from '../user';
 import { LocalService } from './localStorage';
 
 
@@ -17,7 +19,10 @@ export class CartService {
   public cartTotal: any  = 0;  
   total: number = 0;
 
-  constructor(private localStore: LocalService) { 
+  constructor(
+    private localStore: LocalService,
+    private http: HttpClient
+  ) { 
 
     this.loadCart();
   }
@@ -125,7 +130,7 @@ export class CartService {
   this.items.map((item) => {
     total += item.price;
   });
-  console.log("total", total)
+  // console.log("total", total)
   return total;
 }
 
@@ -138,6 +143,11 @@ removeProductFromCart(productId: number) {
 
   // Update Observable value
   this.newTotal.next(this.cartItems);
+}
+
+public saveUserTyped(user: User): Observable<UserInfo> {
+  const url = 'https://dummyjson.com/carts/add';
+  return this.http.post<UserInfo>(url, user);
 }
 
 }

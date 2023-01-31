@@ -24,40 +24,16 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.loadCart();
     this.cartItems = this.cartService.getItems();
-    console.log("uuuu", this.cartService.loadCart())
-    console.log("Sss", this.cartItems = this.cartService.getItems())
-
-    // this.cartService.getProducts().subscribe(data => {
-    //   this.cartItems = data;
-
-    //   this.totalAmount = this.cartService.getTotalPrice();
-    // });
-
-    // this.cartItems.loadCart().subscribe((data: any) => {
-    //   this.cartItems = data;
-    //   this.totalAmount = this.cartService.getTotalPrice();
-    //   console.log("total", this.totalAmount)
-    // })
-
-    // this.totalAmount += this.item.price;
-    // console.log("total", this.totalAmount)
 
     this.totalAmount = this.cartService.getTotalPrice();
-      console.log("total", this.totalAmount)
+      // console.log("total", this.totalAmount)
   }
   
   buyNow(item:any){
     console.log('buy now')
-    // console.log(this.size)
-    // if(this.size === undefined){
-    //   alert("pick size")
-    //   return;
-    // }
-
     const itemData = {
       id:item.id,
       thumbnail:item.thumbnail,
-      // size:this.size,
       title:item.title,
       price:item.price,
       brand:item.brand,

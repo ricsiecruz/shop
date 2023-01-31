@@ -1,4 +1,7 @@
 export class User {
+    access_token!: string;
+    id!: number;
+    userId!: number;
     username?: string;
     password?: string;
     firstName?: string;
@@ -8,4 +11,10 @@ export class User {
     phone?: string;
     birthdate?: string;
     image?: string;
+}
+
+export class UserInfo {
+    access_token!: string;
+    id!: number;
+    userId!: number;
 }
