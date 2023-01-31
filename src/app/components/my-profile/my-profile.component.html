@@ -1,36 +1,59 @@
 <div class="bg-gray-d margin-0 height-100 row padding-80-0">
     <div class="offset-md-1 col-10 row margin-0">
-        <div class="offset-md-2 col-10 bg-white text-center row">
-            <div class="col-3" style="border-right: 1px solid #ececec;">
+        <div class="offset-md-2 col-10 bg-white text-center row padding-0">
+            <div class="col-3 acct-dtls">
                 ACCOUNT DETAILS
             </div>
             <div class="col padding-50">
                 <form [formGroup]="parentForm" [disableControl]="!editMode" (ngSubmit)="onSave()" class="font-s13 text-black-l2 row margin-0">
-                    <div style="display: none;" class="padding-5-0">Full Name</div>
-                    <input style="display: none;" formControlName="firstName">
-                    <button (click)="editMode=true" *ngIf="editMode == false" class="btn btn-primary">Edit</button>
-                    <button (click)="editMode=false" *ngIf="editMode == true" class="btn btn-danger margin-20-r">Cancel</button>
-                    <button (click)="onSave()" *ngIf="editMode == true" class="btn btn-success">Save</button>
+                    <!-- <div style="display: none;" class="padding-5-0">Full Name</div>
+                    <input style="display: none;" formControlName="firstName"> -->
+                    <button (click)="editMode=true" *ngIf="editMode == false" class="btn btn-primary offset-md-11 col-1">Edit</button>
+                    <div class="col-2 offset-md-8">
+                        <button (click)="editMode=false" *ngIf="editMode == true" class="btn btn-danger margin-20-r col-12">Cancel</button>
+                    </div>
+                    <div class="col-2">
+                        <button (click)="onSave()" *ngIf="editMode == true" class="btn btn-success col-12">Save</button>
+                    </div>
                 </form>
+
                 <form [formGroup]="parentForm" [disableControl]="!editMode" (ngSubmit)="onSave()" class="row margin-0 text-left">
-                    <div class="padding-5-0">First Name</div>
-                    <input [(ngModel)]="user.firstName" formControlName="firstName" class="col-6 padding-10-15 text-black">
+                    <img src="{{ user.image }}" class="col-2" />
+                    <div *ngIf="editMode == true">
+                        <div class="padding-5-0 margin-10-t">First Name</div>
+                        <input *ngIf="editMode == true" [(ngModel)]="user.firstName" formControlName="firstName" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Last Name</div>
+                        <input [(ngModel)]="user.lastName" formControlName="lastName" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Phone</div>
+                        <input [(ngModel)]="user.phone" formControlName="phone" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Username</div>
+                        <input [(ngModel)]="user.username" formControlName="username" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Age</div>
+                        <input [(ngModel)]="user.age" formControlName="age" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Email</div>
+                        <input [(ngModel)]="user.email" formControlName="email" class="col-6 text-black input-gray input-group-text text-left">
+                        <div class="padding-5-0 margin-10-t">Birthdate</div>
+                        <input [(ngModel)]="user.birthdate" formControlName="birthdate" class="col-6 text-black input-gray input-group-text text-left">
+                    </div>
+                    <div *ngIf="editMode == false">
+                        <div class="padding-5-0 margin-10-t">First Name</div>
+                        <input [(ngModel)]="user.firstName" formControlName="firstName" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Last Name</div>
+                        <input [(ngModel)]="user.lastName" formControlName="lastName" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Phone</div>
+                        <input [(ngModel)]="user.phone" formControlName="phone" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Username</div>
+                        <input [(ngModel)]="user.username" formControlName="username" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Age</div>
+                        <input [(ngModel)]="user.age" formControlName="age" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Email</div>
+                        <input [(ngModel)]="user.email" formControlName="email" class="col-6 text-gray input-gray">
+                        <div class="padding-5-0 margin-10-t">Birthdate</div>
+                        <input [(ngModel)]="user.birthdate" formControlName="birthdate" class="col-6 text-gray input-gray">
+                    </div>
+                    
                 </form>
-                <img src="{{ user.image }}" />
-                First name
-                {{ user.firstName }}
-                Last name
-                {{ user.lastName }}
-                Username
-                {{ user.username }}
-                Age
-                {{ user.age }}
-                Email
-                {{ user.email }}
-                Phone
-                {{ user.phone }}
-                Birthday
-                {{ user.birthdate }}
+
             </div>
         </div>
     </div>
