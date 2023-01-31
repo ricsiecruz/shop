@@ -1,0 +1,20 @@
+<div class="row margin-0 text-black-l align-center" style="border-bottom: 1px solid #ebebeb;">
+    <div class="text-right col-9">
+        <h5 class="margin-0">{{ time | date: 'hh:mm:ss a' }}</h5>
+        <div class="font-s12">{{ dateObj | date: 'MMMM d, y' }}</div>
+    </div>
+    <div class="col-3 font-s13 text-gray row margin-0 padding-0" style="border-left: 1px solid #ebebeb;">
+        <div nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu2" class="row margin-0 padding-10-0 cursor">
+            <img src="assets/img/header-profile.svg" class="col-3" >
+            <div class="col-7 padding-0">
+                Admin User
+            </div>
+            <i class="fa fa-angle-down col-1 padding-0 text-right font-s20" aria-hidden="true"></i>
+        </div>
+        <nz-dropdown-menu #menu2="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)='authenticationService.logout()'>Logout</li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+</div>

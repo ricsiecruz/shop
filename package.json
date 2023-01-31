@@ -21,6 +21,7 @@
     "@angular/router": "~13.0.0-next.0",
     "bootstrap": "^5.2.3",
     "httpclient": "^0.1.0",
+    "ng-zorro-antd": "^13.4.0",
     "ngx-cookie-service": "^15.0.0",
     "ngx-slickjs": "^1.5.2",
     "rxjs": "~7.4.0",

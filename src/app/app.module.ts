@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,8 @@ import { UsersComponent } from './components/admin/users/users.component';
 import { ProductsComponent } from './components/admin/products/products.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { SidenavComponent } from './components/admin/sidenav/sidenav.component';
+import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
+import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { SidenavComponent } from './components/admin/sidenav/sidenav.component';
     UsersComponent,
     ProductsComponent,
     DashboardComponent,
-    SidenavComponent
+    SidenavComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +55,8 @@ import { SidenavComponent } from './components/admin/sidenav/sidenav.component';
     HttpClientModule,
     BsOffcanvasModule,
     OverlayModule,
+    DemoNgZorroAntdModule,
+    BrowserAnimationsModule,
     NgxSlickJsModule.forRoot({
       links: {
         jquery: "https://code.jquery.com/jquery-3.4.0.min.js",
