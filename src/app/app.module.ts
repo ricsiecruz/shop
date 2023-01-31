@@ -20,6 +20,11 @@ import { LoaderService } from './services/loader.service';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { AccountService } from './services/account.service';
 import { DisableControlDirective } from './disable.directive';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { ProductsComponent } from './components/admin/products/products.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { SidenavComponent } from './components/admin/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { DisableControlDirective } from './disable.directive';
     CartDetailsComponent,
     LoginComponent,
     MyProfileComponent,
-    DisableControlDirective
+    DisableControlDirective,
+    AdminComponent,
+    UsersComponent,
+    ProductsComponent,
+    DashboardComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

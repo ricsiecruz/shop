@@ -1,15 +1,4 @@
-<!-- <ng-container *ngFor="let data of dataList;let i=index">
-    <div *ngIf="i<6" >
-      {{data.title}}
-      <img src="{{ data.image }}" />
-    </div>
-</ng-container> -->
-<!-- <loader></loader> -->
-
-<!-- <div *ngFor="let data of dataList">
-    {{ data.title }}
-</div> -->
-
+<app-header></app-header>
 <div slickContainer #slickController="slick" [slickConfig]="products">
     <ng-container *ngIf="slickController.initialize">
       <ng-container *ngFor="let data of dataList;let i=index">
