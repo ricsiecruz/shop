@@ -16,7 +16,7 @@ export class MyProfileComponent implements OnInit {
   constructor(public accountService: AccountService,
     public authenticationService: AuthenticationService) {
     this.user = this.authenticationService.userValue;
-        console.log(this.user)
+        console.log(">>>", this.user)
    }
 
   ngOnInit(): void {

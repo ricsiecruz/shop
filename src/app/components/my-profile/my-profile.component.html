@@ -1,9 +1,25 @@
 <div class="bg-gray-d margin-0 height-100 row padding-80-0">
     <div class="offset-md-1 col-10 row margin-0">
-        <div class="offset-md-5 col-5 bg-white text-center">
-            <div class="offset-md-2 col-8">
-                asd
+        <div class="offset-md-2 col-10 bg-white text-center row">
+            <div class="col-3" style="border-right: 1px solid #ececec;">
+                ACCOUNT DETAILS
+            </div>
+            <div class="col">
+                <img src="{{ user.image }}" />
+                First name
                 {{ user.firstName }}
+                Last name
+                {{ user.lastName }}
+                Username
+                {{ user.username }}
+                Age
+                {{ user.age }}
+                Email
+                {{ user.email }}
+                Phone
+                {{ user.phone }}
+                Birthday
+                {{ user.birthdate }}
             </div>
         </div>
     </div>
