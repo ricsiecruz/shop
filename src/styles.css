@@ -12,6 +12,10 @@ body {
     font-family: 'Lato';
 }
 
+.bg-white-d {
+    background-color: #f7f7f8;
+}
+
 .bg-black {
     background-color: #232323;
 }
@@ -306,6 +310,7 @@ body {
 .sticky-top {
     position: fixed !important;
     width: 100%;
+    z-index: 0 !important;
 }
 
 .height-100 {
