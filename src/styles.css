@@ -310,7 +310,7 @@ body {
 .sticky-top {
     position: fixed !important;
     width: 100%;
-    z-index: 0 !important;
+    z-index: 1 !important;
 }
 
 .height-100 {
@@ -347,4 +347,8 @@ body {
     font-size: 13px;
     letter-spacing: 0.06em;
     padding-top: 50px;
+}
+
+.cdk-global-scrollblock {
+    position: absolute !important;
 }
