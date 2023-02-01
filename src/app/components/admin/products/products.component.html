@@ -1,1 +1,18 @@
-<p>products works!</p>
+<div class="bg-white padding-20" style="box-shadow: 0 20px 40px #122a5b0d;">
+    <div class="row margin-0 font-w600">
+        <div class="col-1">Thumbnail</div>
+        <div class="col">Name</div>
+        <div class="col">Category</div>
+        <div class="col">Brand</div>
+        <div class="col">Stock</div>
+        <div class="col">Price</div>
+    </div>
+    <div *ngFor="let data of dataList" class="row margin-0 vertical-align padding-10-0 text-61">
+        <img class="col-1" src="{{ data.thumbnail }}" />
+        <div class="col">{{ data.title }}</div>
+        <div class="col">{{ data.category }}</div>
+        <div class="col">{{ data.brand }}</div>
+        <div class="col">{{ data.stock }}</div>
+        <div class="col">${{ data.price }}</div>
+    </div>
+</div>
